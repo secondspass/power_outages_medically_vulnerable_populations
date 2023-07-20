@@ -2,7 +2,7 @@
 
 # Power Outages and Socioeconomics
 
-### Welcome!!
+## Welcome!!
 
 This README will guide you through the stages of this project, and by the end we will have explored data about power outages, how weather affects energy access, charted populations that are dependent on medical equipment who are especially reliant on energy access. We will come away with skills to explore data using Python and Pandas, and identified correlations both using visual plots and statistical tests.
 
@@ -54,17 +54,17 @@ We are going to be working with three main datasets:
 ### Jupyter Notebooks
 
 The exercises and tutorials linked below are in Jupyter notebooks and will familiarize you with the provided data and prepare you to answer the the big questions.
-1. Link 1 - Exploring the datasets - Explore the datasets that you will be working with Google Sheets, draw some graphs
+1. 1_Exploring_Datasets.ipynb - Exploring the datasets - Explore the datasets that you will be working with Google Sheets, draw some graphs
     1. Who should do this? All group members
-2. Link 2 - Python and Pandas intro - Some refresher material from Kellen's Python and Pandas tutorial. Along with using Python and Pandas to explore our datasets and learning some useful Pandas tools you'll need for working with these datasets.
+2. 2_Python_Pandas_Intro.ipynb - Python and Pandas intro - Some refresher material from Kellen's Python and Pandas tutorial. Along with using Python and Pandas to explore our datasets and learning some useful Pandas tools you'll need for working with these datasets.
     1. Who should do this? All group members
-3. Link 3 - Time series data - Exploring the EAGLE-I time series dataset, including looking at grouping and aggregation, and how to use aggregated data with other regular data with Pandas.
+3. 3_Time_Series_Data.ipynb - Time series data - Exploring the EAGLE-I time series dataset, including looking at grouping and aggregation, and how to use aggregated data with other regular data with Pandas.
     1. Who should do this? At least one group member
-4. Link 4 - Correlation and Causation - Learn how to calculate the correlation between two data points. A useful statistical technique to learn when working with data where plots don't show any obvious correlation/plots would be an inconvenient representation. 
+4. 4_CorrelationAnalysis.ipynb - Correlation and Causation - Learn how to calculate the correlation between two data points. A useful statistical technique to learn when working with data where plots don't show any obvious correlation/plots would be an inconvenient representation. 
     1. Who should do this? At least one group member.
-5. Link 5 - Drawing Maps - Learn how to draw maps and lay your data on a map.
+5. 5_Drawing_Maps.ipynb - Drawing Maps - Learn how to draw maps and lay your data on a map.
     1. Who should do this? At least one group member.
-6. Link 6 - Big Questions - Use this notebook to work on answering the big questions.
+6. 6_Answering_Big_Questions.ipynb - Big Questions - Use this notebook to work on answering the big questions.
     1. Who should do this? The group working together.
 
 
