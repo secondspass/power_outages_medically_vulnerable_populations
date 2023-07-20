@@ -28,18 +28,17 @@ Developed by the Office of Electricity Delivery and Energy Reliability’s (OE) 
 
 
 
-## TODO: Setup instructions
-Instructions for how to copy the project repo from NERSC CFS location to individual group project directory.
+## Setup instructions
+You can find this repository stored in /global/cfs/cdirs/m4388/Project4-pow_medv on the NERSC file system. Log on to NERSC's JupyterHub and navigate to that location using the file browser. Copy the whole 'power_outages_medically_vulnerable_populations' folder to your group's folder. This folder will includes all the notebooks and the data you need (in the power_outages_medically_vulnerable_populations/data folder). 
 
 
 
 ### Datasets
 
-All the data we need is in this google drive folder: https://drive.google.com/drive/folders/1fAaBPgWWaA_9VB2iYUAWeW8biTXJQFwZ?usp=sharing and also will be stored on the NERSC file system so you can easily copy it. 
+All the data we need is in this google drive folder: https://drive.google.com/drive/folders/1fAaBPgWWaA_9VB2iYUAWeW8biTXJQFwZ?usp=sharing and can also be found in the /global/cfs/cdirs/m4388/Project4-pow_medv/power_outages_medically_vulnerable_populations/data folder on the NERSC file system. 
 
-For the Python notebook exercises, you will need to copy the data from (TODO nersc CFS location) into the data folder in this directory on the NERSC Jupyter.
 
-We are going to be working with four main datasets:
+We are going to be working with three main datasets:
 
 * eaglei_outages/eaglei_outages_2016.csv - provides the breakdown of the number of customers that were out of power in the year 2016, for each county in the US, with data for each 15 minute increment covering the entire year. The eaglei_outages directory also has csv files for other years. You can use them to explore power outage data for others if you're so inclined! NOTE: the timestamp is in UTC+0 so you will need to adjust the time stamp according to the time zone of the location you're looking at.
 
