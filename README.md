@@ -1,6 +1,6 @@
 
 
-# Power Outages and Socioeconomics
+# Power Outages and Medically Vulnerable populations
 
 ## Welcome!!
 
