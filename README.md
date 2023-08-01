@@ -42,7 +42,6 @@ We are going to be working with three main datasets:
 
 * eaglei_outages/eaglei_outages_2016.csv - provides the breakdown of the number of customers that were out of power in the year 2016, for each county in the US, with data for each 15 minute increment covering the entire year. The eaglei_outages directory also has csv files for other years. You can use them to explore power outage data for others if you're so inclined! NOTE: the timestamp is in UTC+0 so you will need to adjust the time stamp according to the time zone of the location you're looking at.
 
-
 * temperaturedata/CtyAvTempMDDYY.csv - in the temperaturedata folder, each .csv file is the average temperature of the day for each county in the US and its territories. The numbers in the file name represent the date. For example CtyAvTemp61716.csv is the data for June 17 2016.
 
 * 2016_HHSemPOWERMapHistoricalDataset.xlsx - data of population across US counties registered with Medicare, also including size of the population relying on DMEs for the year 2016 Broken down by month. You can see an interactive map here: https://empowerprogram.hhs.gov/empowermap (You can also get datasets for years other than 2016 if you're interested in exploring that later. See here: https://empowerprogram.hhs.gov/about-empowermap.html).
@@ -64,7 +63,9 @@ The exercises and tutorials linked below are in Jupyter notebooks and will famil
     1. Who should do this? At least one group member.
 5. 5_Drawing_Maps.ipynb - Drawing Maps - Learn how to draw maps and lay your data on a map.
     1. Who should do this? At least one group member.
-6. 6_Answering_Big_Questions.ipynb - Big Questions - Use this notebook to work on answering the big questions.
+6. 6_MPI_Intro.ipynb - walks you through submitting a simple job on the Perlmutter supercomputer.
+    1. Who should do this? All group members who want to try it out.
+7. 7_Answering_Big_Questions.ipynb - Big Questions - Use this notebook to work on answering the big questions.
     1. Who should do this? The group working together.
 
 
@@ -76,32 +77,36 @@ These are the questions you will be trying to answer using the data you have bee
 
 2. Of the counties in the SW United States, for June 2016, which counties had the highest and lowest DME reliant population? What percentage of the total population of the county is that? Can you show the top X counties for each? (Datasets:  2016_HHSemPOWERMapHistoricalDataset.xlsx)
 
-3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, one chart for each day showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
+3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, one chart for each day of June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
     1. To show how the power outage numbers during a heatwave differ from days when there wasn't a heatwave, can you determine what the average number of customers without power per county is during a time period there wasn't a heatwave? And can you include that information in your charts?
     
-4. Can you generate a map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
+4. Do counties with higher DME reliant populations have higher average power outages i.e. is there a correlation? Can you use one of the statistical tests you learned to identify this correlation? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and eaglei_outages_2016.csv)
+    1. Remember that correlation doesn't imply causation. We're only trying to see if there is a statistically significant relationship between these two values.
+    
+You are doing super well if you get through question 4! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting. 
+    
+5. Can you generate a map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
 
+6. Try submitting a couple of jobs to the Perlmutter supercomputer. See 6_MPI_Intro.ipynb for more information.
 
-5. Given what we saw for many of these power outages and the populations that might be affected, what recommendations would you make for readiness for heatwaves: a. for local emergency services b. to the county government c. to the state and federal government
-
-You are doing super well if you get through question 5! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting.  
-
-6.  Can you tell if the number of customers without power is correlated with the highest temperatures of a particular day during the heatwave? Pick a county or a few counties to make it simpler. (Datasets: eaglei_outages_2016.csv and  search the internet for hourly temperature information for that particular day. You may even have to make your own dataframe with the hourly temperature information if you want to use Pandas to identify the correlation. Here's an example resource that shows hourly temperatures: https://www.timeanddate.com/weather/usa/los-angeles/historic?month=6&year=2016016/historic?month=6&year=20166&year=2016).
+8.  Can you tell if the number of customers without power is correlated with the highest temperatures of a particular day during the heatwave? Pick a county or a few counties to make it simpler. (Datasets: eaglei_outages_2016.csv and  search the internet for hourly temperature information for that particular day. You may even have to make your own dataframe with the hourly temperature information if you want to use Pandas to identify the correlation. Here's an example resource that shows hourly temperatures: https://www.timeanddate.com/weather/usa/los-angeles/historic?month=6&year=2016016/historic?month=6&year=20166&year=2016).
     1. You may have to use interpolation to potentially fill in missing data.
 
-7. Can you identify if there is a correlation between the size of the medically vulnerable populations and the size of the asthmatic population? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and CtyAvDemog2010.csv . Note that the CtyAvDemog2010.csv is data from 2010. Make sure you are considering that caveat when you present the results.)
+9. Can you identify if there is a correlation between the size of the medically vulnerable populations in counties and the size of the asthmatic population in counties? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and CtyAvDemog2010.csv . Note that the CtyAvDemog2010.csv is data from 2010. Make sure you are considering that caveat when you present the results.)
     1. Are you able to investigate if there is a correlation between the size of the medically vulnerable populations and anything else in the CtyAvDemog2010.csv data? What have you tried to investigate? And what did it show you? 
 
-8. Look for data on the internet about another natural disaster that happened between 2015 and 2021 and see if you can repeat the analysis for it. How many customers lost power? How exposed were the medically vulnerable populations in those counties? examine the power outage information from the data in eaglei_outages from among the years we have available data for. 
+10. Look for data on the internet about another natural disaster that happened between 2015 and 2021 and see if you can repeat the analysis for it. How many customers lost power? How exposed were the medically vulnerable populations in those counties? examine the power outage information from the data in eaglei_outages from among the years we have available data for. 
   
-9. Try submitting a couple of jobs to the Perlmutter supercomputer. See the 6_Answering_Big_Questions.ipynb for more info and instructions.
+
+
 
 **Note** You do not have to tackle the Big Questions with the exercises given in this guide if you have another plan in mind to work with. These are here to help you get started and are not mandatory.
 
 
 ### The Final Product:
 
-You will combine your visualizations and insights from answering the big questions into a presentation that you will give on the last day of the workshop.
+You will combine your visualizations and insights from answering the big questions into a presentation that you will give on the last day of the workshop. 
+And given what you see for many of these power outages and the populations that might be affected, what recommendations would you make for readiness for heatwaves: a. for local emergency services b. to the county government c. to the state and federal government. Make sure to include that in your presentation.
 
 
 ### Goals:
