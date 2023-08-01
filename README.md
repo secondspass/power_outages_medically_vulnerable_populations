@@ -29,13 +29,13 @@ Developed by the Office of Electricity Delivery and Energy Reliability’s (OE) 
 
 
 ## Setup instructions
-You can find this repository stored in `/global/cfs/cdirs/m4388/Project4-pow_medv` on the NERSC file system. Log on to NERSC's JupyterHub and navigate to that location using the file browser. Copy the whole `power_outages_medically_vulnerable_populations` folder to your group's folder. This folder will includes all the notebooks and the data you need (in the `power_outages_medically_vulnerable_populations/data` folder). 
+You can find this repository stored in `/global/cfs/cdirs/m4388/Project6-pow_medv` on the NERSC file system. Log on to NERSC's JupyterHub and navigate to that location using the file browser. Copy the whole `power_outages_medically_vulnerable_populations` folder to your group's folder. This folder will includes all the notebooks and the data you need (in the `power_outages_medically_vulnerable_populations/data` folder). 
 
 
 
 ### Datasets
 
-All the data we need is in this google drive folder: https://drive.google.com/drive/folders/1fAaBPgWWaA_9VB2iYUAWeW8biTXJQFwZ?usp=sharing and can also be found in the `/global/cfs/cdirs/m4388/Project4-pow_medv/power_outages_medically_vulnerable_populations/data` folder on the NERSC file system. 
+All the data we need is in this google drive folder: https://drive.google.com/drive/folders/1fAaBPgWWaA_9VB2iYUAWeW8biTXJQFwZ?usp=sharing and can also be found in the `/global/cfs/cdirs/m4388/Project6-pow_medv/power_outages_medically_vulnerable_populations/data` folder on the NERSC file system. 
 
 
 We are going to be working with three main datasets:
