@@ -8,5 +8,6 @@
 #SBATCH -e eaglei_mpi-ex2-%j.err
 
 module load evp-patch
+module load python
 
 srun -n8 python3 eaglei_mpi_ex2.py

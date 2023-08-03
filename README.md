@@ -73,29 +73,31 @@ The exercises and tutorials linked below are in Jupyter notebooks and will famil
 
 These are the questions you will be trying to answer using the data you have been given and the skills you developed during the bootcamp and by going through the material in the Jupyter Notebooks. Unless stated otherwise, focus on the counties in the states California, Nevada, and Arizona (but feel free to explore other states too if you're curious once your done answering the questions for those states!). Use the notebook 6_Answering_Big_Questions.ipynb to work on your answers (you can split the work up between the group by making a copy of the notebook for each member, or work on it together in the same notebook). 
 
-1. Which counties in the Southwest US were hit with the highest average temperatures in June 17-24, 2016? Can you show it visually, one chart for each day showing the top X counties? (Datasets: CtyAvTemp6XY16.csv where XY is 17,18,19,...,24)
+Note: whenever 'top X' is mentioned in the big questions, we're leaving it up to you to decide what number X should be.
+
+1. Which counties in the Southwest US were hit with the highest average temperatures in June 17-24, 2016? Choose a subset of those days, maybe two or three. Can you show it visually, one chart for each day showing the top X counties? (Datasets: CtyAvTemp6XY16.csv where XY is 17,18,19,...,24)
 
 2. Of the counties in the SW United States, for June 2016, which counties had the highest and lowest DME reliant population? What percentage of the total population of the county is that? Can you show the top X counties for each? (Datasets:  2016_HHSemPOWERMapHistoricalDataset.xlsx)
 
-3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, one chart for each day of June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
+3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, a few charts showing some subset of days in June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
     1. To show how the power outage numbers during a heatwave differ from days when there wasn't a heatwave, can you determine what the average number of customers without power per county is during a time period there wasn't a heatwave? And can you include that information in your charts?
     
 4. Do counties with higher DME reliant populations have higher average power outages i.e. is there a correlation? Can you use one of the statistical tests you learned to identify this correlation? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and eaglei_outages_2016.csv)
     1. Remember that correlation doesn't imply causation. We're only trying to see if there is a statistically significant relationship between these two values.
     
-You are doing super well if you get through question 4! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting. 
+You are doing super well if you get through question 4! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting. I would encourage doing 6 since that's an exercise on how to run tasks on the Perlmutter supercomputer.
     
 5. Can you generate a map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
 
 6. Try submitting a couple of jobs to the Perlmutter supercomputer. See 6_MPI_Intro.ipynb for more information.
 
-8.  Can you tell if the number of customers without power is correlated with the highest temperatures of a particular day during the heatwave? Pick a county or a few counties to make it simpler. (Datasets: eaglei_outages_2016.csv and  search the internet for hourly temperature information for that particular day. You may even have to make your own dataframe with the hourly temperature information if you want to use Pandas to identify the correlation. Here's an example resource that shows hourly temperatures: https://www.timeanddate.com/weather/usa/los-angeles/historic?month=6&year=2016016/historic?month=6&year=20166&year=2016).
+7.  Can you tell if the number of customers without power is correlated with the highest temperatures of a particular day during the heatwave? Pick a county or a few counties to make it simpler. (Datasets: eaglei_outages_2016.csv and  search the internet for hourly temperature information for that particular day. You may even have to make your own dataframe with the hourly temperature information if you want to use Pandas to identify the correlation. Here's an example resource that shows hourly temperatures: https://www.timeanddate.com/weather/usa/los-angeles/historic?month=6&year=2016016/historic?month=6&year=20166&year=2016).
     1. You may have to use interpolation to potentially fill in missing data.
 
-9. Can you identify if there is a correlation between the size of the medically vulnerable populations in counties and the size of the asthmatic population in counties? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and CtyAvDemog2010.csv . Note that the CtyAvDemog2010.csv is data from 2010. Make sure you are considering that caveat when you present the results.)
+8. Can you identify if there is a correlation between the size of the medically vulnerable populations in counties and the size of the asthmatic population in counties? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and CtyAvDemog2010.csv . Note that the CtyAvDemog2010.csv is data from 2010. Make sure you are considering that caveat when you present the results.)
     1. Are you able to investigate if there is a correlation between the size of the medically vulnerable populations and anything else in the CtyAvDemog2010.csv data? What have you tried to investigate? And what did it show you? 
 
-10. Look for data on the internet about another natural disaster that happened between 2015 and 2021 and see if you can repeat the analysis for it. How many customers lost power? How exposed were the medically vulnerable populations in those counties? examine the power outage information from the data in eaglei_outages from among the years we have available data for. 
+9. Look for data on the internet about another natural disaster that happened between 2015 and 2021 and see if you can repeat the analysis for it. How many customers lost power? How exposed were the medically vulnerable populations in those counties? examine the power outage information from the data in eaglei_outages from among the years we have available data for. 
   
 
 
