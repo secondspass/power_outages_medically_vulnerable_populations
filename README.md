@@ -6,6 +6,8 @@
 
 This README will guide you through the stages of this project, and by the end we will have explored data about power outages, how weather affects energy access, charted populations that are dependent on medical equipment who are especially reliant on energy access. We will come away with skills to explore data using Python and Pandas, and identified correlations both using visual plots and statistical tests.
 
+We encourage you to ask any and all questions you have to the project lead and to the peer mentors. They're here to help!
+
 ## Teeing up the Problem
 
 In June of 2016, a heatwave swept across the SW United States, causing severe loads on the power grid, and leading to large number of power outages across several counties. We are going to be exploring correlations between temperature and power outages, and the level of exposure these effects have on medically vulnerable populations.
@@ -27,9 +29,14 @@ The EAGLE-I system allows local, state, and federal government agencies, and pri
 Developed by the Office of Electricity Delivery and Energy Reliability’s (OE) Infrastructure Security and Energy Restoration (ISER) division, EAGLE-I uses data science approaches to provide a centralized platform for monitoring power distribution outages for over 133 million customers, with just over 90% coverage of the US and Territories. Oak Ridge National Laboratory provides EAGLE-I as a service to other Federal, State, and local agencies and departments and first responders aligning with DOE’s Emergency Support Function-12 (ESF-12) mission, and users come from DOE, DHS, NGA, DOD, FEMA, USDA, and state emergency responders, among others.
 
 
-
 ## Setup instructions
 You can find this repository stored in `/global/cfs/cdirs/m4388/Project6-pow_medv` on the NERSC file system. Log on to NERSC's JupyterHub and navigate to that location using the file browser. Copy the whole `power_outages_medically_vulnerable_populations` folder to your group's folder. This folder will includes all the notebooks and the data you need (in the `power_outages_medically_vulnerable_populations/data` folder). 
+
+To do this copy:
+- Navigate to your project location by clicking on File->Open From Path and enter `/global/cfs/cdirs/m4388` and click on Open
+- This should take you to the list of projects and group folders in the file browser on the left. 
+- open a terminal on Jupyter by clicking on the + button and clicking on the terminal button. This should open a terminal open in the `/global/cfs/cdirs/m4388` directory. If not you can navigate there by executing `cd /global/cfs/cdirs/m4388` on the terminal.
+- Now copy the Project6 data into your group's folder by running `cp -r Project6-pow_medv <group folder name>` replacing `<group folder name>` with the actual name. 
 
 
 
@@ -40,12 +47,21 @@ All the data we need is in this google drive folder: https://drive.google.com/dr
 
 We are going to be working with three main datasets:
 
-* eaglei_outages/eaglei_outages_2016.csv - provides the breakdown of the number of customers that were out of power in the year 2016, for each county in the US, with data for each 15 minute increment covering the entire year. The eaglei_outages directory also has csv files for other years. You can use them to explore power outage data for others if you're so inclined! NOTE: the timestamp is in UTC+0 so you will need to adjust the time stamp according to the time zone of the location you're looking at.
+* `eaglei_outages/eaglei_outages_2016.csv` - provides the breakdown of the number of customers that were out of power in the year 2016, for each county in the US, with data for each 15 minute increment covering the entire year. The eaglei_outages directory also has csv files for other years. You can use them to explore power outage data for others if you're so inclined! NOTE: the timestamp is in UTC+0 so you will need to adjust the time stamp according to the time zone of the location you're looking at.
+    -     - There is an additional dataset in this folder, eaglei_outages/eaglei_outages_July_17to20_2023.csv that contains county data in 15 minute intervals for July 17-23, a recent week in the US with high heat and storms. If you want to explore that using the knowledge you gained from working on the 2016 data, I encourage you to do so!
 
-* temperaturedata/CtyAvTempMDDYY.csv - in the temperaturedata folder, each .csv file is the average temperature of the day for each county in the US and its territories. The numbers in the file name represent the date. For example CtyAvTemp61716.csv is the data for June 17 2016.
+* `temperaturedata/CtyAvTempMDDYY.csv` - in the temperaturedata folder, each .csv file is the average temperature of the day for each county in the US and its territories. The numbers in the file name represent the date. For example CtyAvTemp61716.csv is the data for June 17 2016.
 
-* 2016_HHSemPOWERMapHistoricalDataset.xlsx - data of population across US counties registered with Medicare, also including size of the population relying on DMEs for the year 2016 Broken down by month. You can see an interactive map here: https://empowerprogram.hhs.gov/empowermap (You can also get datasets for years other than 2016 if you're interested in exploring that later. See here: https://empowerprogram.hhs.gov/about-empowermap.html).
+* `2016_HHSemPOWERMapHistoricalDataset.xlsx` - data of population across US counties registered with Medicare, also including size of the population relying on DMEs for the year 2016 Broken down by month. You can see an interactive map here: https://empowerprogram.hhs.gov/empowermap (You can also get datasets for years other than 2016 if you're interested in exploring that later. See here: https://empowerprogram.hhs.gov/about-empowermap.html).
 
+* `fips-by-state.csv` - Federal Information Processing System (FIPS) Codes with county and state names. Fips codes are unique geographical identifiers of geographical areas.
+
+
+If you want to look at the relative fraction of customers impacted per county, you need a measure of how many customers are in each county. We don't have data on the exact number of customers per county in 2016, but we do have the estimate for 2023. We also have included an estimate of the total population for each county. You can choose either of these to estimate the fraction of customers per county impacted by power outages, but you will need to explain your choice.
+
+* `county_customers_2023.csv` - estimated number of eagle-i customers by county as of 2023
+  
+* `county_population_by_year.csv` - population of US county by year, from 2010 to 2019, together with its fips code. If you want to use population to a fraction of population that was impacted, refer to this dataset. This dataset was extracted from the 2010-2019 census data, and combined with the `fips-by-state.csv` dataset to include the county's fips code.
 
 * NOTE: Something you'll find as you work with these datasets is that there might be some data missing here and there e.g. There might not be power outage information for some county for some given day. That's just the nature of data science sometimes, that the data you have isn't perfect. So you have to make sure that you're using the data you have and making sure you're accounting for any missing data when before you make any conclusions. You may need to use Excel or your favorite method to "Clean" some of the data sets. Cleaning is the process of removing problematic data, such as ASCII letters or punctuation characters that appear where numbers should be, or reformatting one set of data, so it can be compared to another set.
 
@@ -81,13 +97,13 @@ Note: whenever 'top X' is mentioned in the big questions, we're leaving it up to
 
 3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, a few charts showing some subset of days in June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
     1. To show how the power outage numbers during a heatwave differ from days when there wasn't a heatwave, can you determine what the average number of customers without power per county is during a time period there wasn't a heatwave? And can you include that information in your charts?
+    2. Or do you think it would be better to compare outage numbers qith the county population (from `county_population_by_year.csv`) or with number of customers from 2023 (`county_customers_2023.csv`). Pick whichever you think makes sense but make sure you talk about your reasoning when you present it.
     
 4. Do counties with higher DME reliant populations have higher average power outages i.e. is there a correlation? Can you use one of the statistical tests you learned to identify this correlation? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and eaglei_outages_2016.csv)
     1. Remember that correlation doesn't imply causation. We're only trying to see if there is a statistically significant relationship between these two values.
     
-You are doing super well if you get through question 4! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting. I would encourage doing 6 since that's an exercise on how to run tasks on the Perlmutter supercomputer.
-    
-5. Can you generate a map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
+
+5. Can you generate an interactive map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
 
 6. Try submitting a couple of jobs to the Perlmutter supercomputer. See 6_MPI_Intro.ipynb for more information.
 
@@ -100,6 +116,9 @@ You are doing super well if you get through question 4! The rest of the question
 9. Look for data on the internet about another natural disaster that happened between 2015 and 2021 and see if you can repeat the analysis for it. How many customers lost power? How exposed were the medically vulnerable populations in those counties? examine the power outage information from the data in eaglei_outages from among the years we have available data for. 
   
 
+### Notes about Big Questions
+
+**Note** You are doing super well if you get through question 4! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting. I would encourage doing 6 since that's an exercise on how to run tasks on the Perlmutter supercomputer.
 
 
 **Note** You do not have to tackle the Big Questions with the exercises given in this guide if you have another plan in mind to work with. These are here to help you get started and are not mandatory.
