@@ -8,7 +8,7 @@
 #SBATCH -e my_ex2-%j.err
 
 module load evp-patch
+module load python
 
-cd ~/jupyter_bootcampproject_examples/eaglei_mpi_scripts
 
 srun -n<CHANGE THIS> python3 eaglei_mpi_ex2.py
