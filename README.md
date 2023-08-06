@@ -48,7 +48,7 @@ All the data we need is in this google drive folder: https://drive.google.com/dr
 We are going to be working with three main datasets:
 
 * `eaglei_outages/eaglei_outages_2016.csv` - provides the breakdown of the number of customers that were out of power in the year 2016, for each county in the US, with data for each 15 minute increment covering the entire year. The eaglei_outages directory also has csv files for other years. You can use them to explore power outage data for others if you're so inclined! NOTE: the timestamp is in UTC+0 so you will need to adjust the time stamp according to the time zone of the location you're looking at.
-    -     - There is an additional dataset in this folder, eaglei_outages/eaglei_outages_July_17to20_2023.csv that contains county data in 15 minute intervals for July 17-23, a recent week in the US with high heat and storms. If you want to explore that using the knowledge you gained from working on the 2016 data, I encourage you to do so!
+    - There is an additional dataset in this folder, eaglei_outages/eaglei_outages_July_17to20_2023.csv that contains county data in 15 minute intervals for July 17-23, a recent week in the US with high heat and storms. If you want to explore that using the knowledge you gained from working on the 2016 data, I encourage you to do so!
 
 * `temperaturedata/CtyAvTempMDDYY.csv` - in the temperaturedata folder, each .csv file is the average temperature of the day for each county in the US and its territories. The numbers in the file name represent the date. For example CtyAvTemp61716.csv is the data for June 17 2016.
 
@@ -87,7 +87,10 @@ The exercises and tutorials linked below are in Jupyter notebooks and will famil
 
 ## The Big Questions for this Project:
 
-These are the questions you will be trying to answer using the data you have been given and the skills you developed during the bootcamp and by going through the material in the Jupyter Notebooks. Unless stated otherwise, focus on the counties in the states California, Nevada, and Arizona (but feel free to explore other states too if you're curious once your done answering the questions for those states!). Use the notebook 6_Answering_Big_Questions.ipynb to work on your answers (you can split the work up between the group by making a copy of the notebook for each member, or work on it together in the same notebook). 
+These are the questions you will be trying to answer using the data you have been given and the skills you developed during the bootcamp and by going through the material in the Jupyter Notebooks. Unless stated otherwise, focus on the counties in the states California, Nevada, and Arizona (but feel free to explore other states too if you're curious once your done answering the questions for those states!). Use the notebook 6_Answering_Big_Questions.ipynb to work on your answers 
+
+You're free to work on any questions you find interesting (or even come up with your own questions to explore). Start on questions 1 to 4 as a good place to start and go from there!
+
 
 Note: whenever 'top X' is mentioned in the big questions, we're leaving it up to you to decide what number X should be.
 
@@ -97,13 +100,14 @@ Note: whenever 'top X' is mentioned in the big questions, we're leaving it up to
 
 3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, a few charts showing some subset of days in June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
     1. To show how the power outage numbers during a heatwave differ from days when there wasn't a heatwave, can you determine what the average number of customers without power per county is during a time period there wasn't a heatwave? And can you include that information in your charts?
-    2. Or do you think it would be better to compare outage numbers qith the county population (from `county_population_by_year.csv`) or with number of customers from 2023 (`county_customers_2023.csv`). Pick whichever you think makes sense but make sure you talk about your reasoning when you present it.
+    2. Or do you think it would be better to compare outage numbers with the county population (from `county_population_by_year.csv`) or with number of customers from 2023 (`county_customers_2023.csv`). Pick whichever you think makes sense but make sure you talk about your reasoning when you present it. Remember the note that data sometimes might be missing.
     
 4. Do counties with higher DME reliant populations have higher average power outages i.e. is there a correlation? Can you use one of the statistical tests you learned to identify this correlation? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and eaglei_outages_2016.csv)
     1. Remember that correlation doesn't imply causation. We're only trying to see if there is a statistically significant relationship between these two values.
     
 
 5. Can you generate an interactive map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
+    1. Can you generate maps for some of the other questions you answered?
 
 6. Try submitting a couple of jobs to the Perlmutter supercomputer. See 6_MPI_Intro.ipynb for more information.
 
@@ -118,16 +122,17 @@ Note: whenever 'top X' is mentioned in the big questions, we're leaving it up to
 
 ### Notes about Big Questions
 
-**Note** You are doing super well if you get through question 4! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting. I would encourage doing 6 since that's an exercise on how to run tasks on the Perlmutter supercomputer.
+- You can split the work up between the group by making a copy of the notebook for each member, or work on it together in the same notebook. **BUT remember that the Jupyterhub is not like google docs where you can see everyone's cursor. So it's easy to accidentally overwrite each others work if you're working in the same notebook.** So if you want to avoid accidentally overwriting anyone else's work, make a copy of the notebook first. 
 
+- You are doing super well if you get through question 4! The rest of the questions are stretch goals. Feel free to do any of them that you find interesting. I would encourage doing 5 since that's an exercise on how to run tasks on the Perlmutter supercomputer.
 
-**Note** You do not have to tackle the Big Questions with the exercises given in this guide if you have another plan in mind to work with. These are here to help you get started and are not mandatory.
+- You do not have to tackle the Big Questions with the exercises given in this guide if you have another plan in mind to work with. These are here to help you get started and are not mandatory.
 
 
 ### The Final Product:
 
 You will combine your visualizations and insights from answering the big questions into a presentation that you will give on the last day of the workshop. 
-And given what you see for many of these power outages and the populations that might be affected, what recommendations would you make for readiness for heatwaves: a. for local emergency services b. to the county government c. to the state and federal government. Make sure to include that in your presentation.
+Given what you see for many of these power outages and the populations that might be affected, what recommendations would you make for readiness for heatwaves: a. for local emergency services b. to the county government c. to the state and federal government. Make sure to include that in your presentation.
 
 
 ### Goals:
