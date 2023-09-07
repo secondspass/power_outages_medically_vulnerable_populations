@@ -59,7 +59,6 @@ We are going to be working with three main datasets:
 
 If you want to look at the relative fraction of customers impacted per county, you need a measure of how many customers are in each county. We don't have data on the exact number of customers per county in 2016, but we do have the estimate for 2023. We also have included an estimate of the total population for each county. You can choose either of these to estimate the fraction of customers per county impacted by power outages, but you will need to explain your choice.
 
-* `county_customers_2023.csv` - estimated number of eagle-i customers by county as of 2023
   
 * `county_population_by_year.csv` - population of US county by year, from 2010 to 2019, together with its fips code. If you want to use population to a fraction of population that was impacted, refer to this dataset. This dataset was extracted from the 2010-2019 census data, and combined with the `fips-by-state.csv` dataset to include the county's fips code.
 
@@ -100,7 +99,7 @@ Note: whenever 'top X' is mentioned in the big questions, we're leaving it up to
 
 3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, a few charts showing some subset of days in June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
     1. To show how the power outage numbers during a heatwave differ from days when there wasn't a heatwave, can you determine what the average number of customers without power per county is during a time period there wasn't a heatwave? And can you include that information in your charts?
-    2. Or do you think it would be better to compare outage numbers with the total county population (from `county_population_by_year.csv`) or with number of customers from 2023 (`county_customers_2023.csv`). Pick whichever you think makes sense but make sure you talk about your reasoning when you present it. Remember the note that data sometimes might be missing.
+    2. Or do you think it would be better to compare outage numbers with the total county population (from `county_population_by_year.csv`). Pick whichever you think makes sense but make sure you talk about your reasoning when you present it. Remember the note that data sometimes might be missing.
     
 4. Do counties with higher DME reliant populations have higher average power outages i.e. is there a correlation? Can you use one of the statistical tests you learned to identify this correlation? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and eaglei_outages_2016.csv)
     1. Remember that correlation doesn't imply causation. We're only trying to see if there is a statistically significant relationship between these two values.
